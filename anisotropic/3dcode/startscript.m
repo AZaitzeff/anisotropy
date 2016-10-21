@@ -1,4 +1,4 @@
-mex ls2vf3D.c
+
 N1=4;
 N2=3;
 sizeu=64;
