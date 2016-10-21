@@ -1,4 +1,5 @@
-N1=4;s
+mex ls2vf3D.c
+N1=4;
 N2=3;
 sizeu=64;
 u0=zeros(N1,64,64,64);
