@@ -19,13 +19,13 @@ for k=1:N1
 end
 %coeff10=coeff1r;
 %coeff20(2:6)=coeff20(2:6)+randn(1,5)*.5;
-coeff10=[-3.5448,-1,-2,0,-2,-1.75]+[0,.3,-.6,.3,.2,.5];
+coeff10=[-3.5448,0,0,0,0,0];
 %coeff20=coeff2r;
 %coeff20(2:6)=coeff20(2:6)+randn(1,5)*.5;
-coeff20=[-3.5448,0,-1,-2,1,0]+[0,.5,-.5,.1,.3,.2];
+coeff20=[-3.5448,0,0,0,0,0];
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
-[coeff1,coeff2,alpha]=gradientdescK(data,t,500,.00001,u0,coeff10,coeff20);
+[coeff1,coeff2,alpha]=gradientdescK(data,t,1,.00005,u0,coeff10,coeff20);
 toc
 
 coeff1

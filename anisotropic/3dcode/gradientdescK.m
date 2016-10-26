@@ -22,6 +22,8 @@ for step=1:nt
     %grad
     coeff1(1:N)=coeff1(1:N)-grad(1:N)*alpha;
     coeff2(1:N)=coeff2(1:N)-grad(N+1:2*N)*alpha;
+    [coeff1]= boundsSH(coeff1);
+    [coeff2]= boundsSH(coeff2);
     %tempw(tempw<1)=1;
     %tempcoeff1(tempcoeff1<0)=0;
     %tempcoeff2(tempcoeff2<0)=0;
