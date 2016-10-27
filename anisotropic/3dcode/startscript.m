@@ -25,7 +25,7 @@ coeff10=[-3.5448,0,0,0,0,0];
 coeff20=[-3.5448,0,0,0,0,0];
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
-[coeff1,coeff2,alpha]=gradientdescK(data,t,250,.00005,u0,coeff10,coeff20);
+[coeff1,coeff2,alpha]=gradientdescK(data,t,250,.00001,u0,coeff10,coeff20);
 toc
 
 coeff1
