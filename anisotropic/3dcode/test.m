@@ -1,6 +1,6 @@
 %coeff1=[-3.5448,0,-1,-2,1,0];
-coeff1l=[-3.5448,0,0,-2,0,-1];
-[coeff1l]= boundsSH(coeff1l);
+coeff1l=coeff2;
+%[coeff1l]= boundsSH(coeff2r);
 %coeff1l=coeff1;
 %coeff2=[.1,.5,.5,.5,.1,.1];
 u0 = getsphere(64,20);
