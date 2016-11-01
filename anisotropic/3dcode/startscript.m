@@ -17,11 +17,11 @@ for k=1:N1
         data(k,i,:,:,:) = tdphysicalK3d(t(i),0.001,reshape(u0(k,:,:,:),[sizeu sizeu sizeu]),coeff1r,coeff2r);
     end
 end
-%coeff10=coeff1r+[0,.5,.5,0,.5,.5];
+%coeff10=coeff1r+[0,.5,.5,0,.5,.5]; reg
 %coeff20=coeff1r+[0,0,.5,.5,.5,.1];
 
-coeff1r=[-3.5448,0,0,0,0,0];
-coeff2r=[-3.5448,0,0,0,0,0];
+coeff10=[-3.5448,0,0,0,0,0]; %3
+coeff20=[-3.5448,0,0,0,0,0];
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
 [coeff1m,coeff2m,vals]=gradientdescK(data,t,300,.000005,u0,coeff10,coeff20);
