@@ -8,7 +8,7 @@ u0(2,:,:,:)= getellipsoid(64,25,15,15,pi/4,pi/4,pi/4);
 u0(3,:,:,:)= getellipsoid(64,25,25,15,0,0,0);
 u0(4,:,:,:)= getellipsoid(64,15,20,25,0,0,0);
 coeff1r=[-3.5448,-1,-2,0,-2,-1];
-coeff2r=[-3.5448,0,-1,-1,1,0];
+coeff2r=[-3.5448,0,-1,-1,-1,0];
 t=[10,20,30];
 
 data=zeros(4,3,64,64,64);
@@ -19,14 +19,26 @@ for k=1:N1
 end
 %coeff10=coeff1r;
 %coeff20(2:6)=coeff20(2:6)+randn(1,5)*.5;
-coeff10=[-3.5448,0,0,0,0,0];
+coeff10=coeff1r+[0,.5,.5,0,.5,.5];
 %coeff20=coeff2r;
 %coeff20(2:6)=coeff20(2:6)+randn(1,5)*.5;
-coeff20=[-3.5448,0,0,0,0,0];
+coeff20=coeff1r+[0,0,.5,.5,.5,.1];
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
-[coeff1m,coeff2m,alpha]=gradientdescK(data,t,750,.00001,u0,coeff10,coeff20);
+[coeff1m,coeff2m,vals]=gradientdescK(data,t,400,.00001,u0,coeff10,coeff20);
 toc
 %u = tdphysicalK3d(t,0.001,u0,coeff1w,coeff2w);
-save('coeffs.mat','coeff1m','coeff2m')
+save('coeffs.mat','coeff1m','coeff2m','vals')
 %isosurface(reshape(data(1,1,:,:,:),[sizeu sizeu sizeu]),0.5); axis([1 64 1 64 1 64]); axis square
+
+       
+% 63128
+% 63122  
+% 63122 
+% 63120
+% 63128  
+% 63120  
+% 63110  
+% 63102   
+% 63098        
+% 63098 

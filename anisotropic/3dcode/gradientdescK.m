@@ -1,13 +1,14 @@
-function [coeff1m,coeff2m,grad] = gradientdescK(data,t,nt,dt,u0,coeff10,coeff20)
+function [coeff1m,coeff2m,vals] = gradientdescK(data,t,nt,dt,u0,coeff10,coeff20)
 h=.01;
 N=numel(coeff10);
 grad=zeros(1,2*N);
 A = eye(N); 
 coeff1m=zeros(nt,N);
 coeff2m=zeros(nt,N);
+vals=zeros(nt,1);
 coeff1=coeff10;
 coeff2=coeff20;
-%val=intsymdif(data,t,u0,coeff1,coeff2);
+val=intsymdif(data,t,u0,coeff1,coeff2);
 %val
 alpha=dt;
 tou=.98;
@@ -15,10 +16,10 @@ flag=1;
 for step=1:nt
     if flag==1;
         for e=2:N
-            grad(e)=(intsymdif(data,t,u0,coeff1+A(e,:)*h*.5,coeff2)-intsymdif(data,t,u0,coeff1-A(e,:)*h*.5,coeff2))/h;
+            grad(e)=(intsymdif(data,t,u0,coeff1+A(e,:)*h,coeff2)-val)/h;
         end
         for e=2:N
-            grad(e+N)=(intsymdif(data,t,u0,coeff1,coeff2+A(e,:)*h*.5)-intsymdif(data,t,u0,coeff1,coeff2-A(e,:)*h*.5))/h;
+            grad(e+N)=(intsymdif(data,t,u0,coeff1,coeff2+A(e,:)*h)-val)/h;
         end
     end
     %grad
@@ -28,6 +29,8 @@ for step=1:nt
     [coeff2]= boundsSH(coeff2);
     coeff1m(step,:)=coeff1;
     coeff2m(step,:)=coeff2;
+    val=intsymdif(data,t,u0,coeff1,coeff2);
+    vals(step)=val;
     %tempw(tempw<1)=1;
     %tempcoeff1(tempcoeff1<0)=0;
     %tempcoeff2(tempcoeff2<0)=0;
