@@ -10,8 +10,7 @@ for num=10:10:100
         end
     end
     vol=sum(sum(sum(ST<1)));
-    vals1(num/10)=sum(sum(sum((ST<1-STr<1))));
-    vals2(num/10)=sum(sum(sum(((ST*(7700/vol))<1-STr<1))));
+    vals1(num/10)=sum(sum(sum(abs((ST<1)-(STr<1)))));
 end
 
 

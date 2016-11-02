@@ -20,20 +20,20 @@ end
 %    end
 %end
 
-%ST0=zeros(size(x));
-%for i=1:n
-%    for j=1:n
-%        for k=1:n
-%            ST0(i,j,k)=cosinetrans([x(i,j,k),y(i,j,k),z(i,j,k)],coeff10);
-%        end
-%    end
-%end
+ST0=zeros(size(x));
+for i=1:n
+    for j=1:n
+        for k=1:n
+            ST0(i,j,k)=cosinetrans([x(i,j,k),y(i,j,k),z(i,j,k)],coeff10);
+        end
+    end
+end
 
 ST=zeros(size(x));
 for i=1:n
     for j=1:n
         for k=1:n
-            ST(i,j,k)=cosinetrans([x(i,j,k),y(i,j,k),z(i,j,k)],coeff1m(250,:));
+            ST(i,j,k)=cosinetrans([x(i,j,k),y(i,j,k),z(i,j,k)],coeff1m(end,:));
         end
     end
 end

@@ -3,7 +3,7 @@ if coeff(2)>0
     coeff(2)=0;
 end
 if coeff(3)>0
-    coeff(2)=0;
+    coeff(3)=0;
 end
 if coeff(5)>0
     coeff(5)=0;
