@@ -24,6 +24,6 @@ end
 %        end
 %    end
 %    vol=sum(sum(sum(ST<1)));
-%    vals1((num-50)/100+8)=sum(sum(sum((ST<1-STr<1))));
+%    vals1((num-50)/100+8)=sum(sum(sum(((ST<1)-STr<1))));
 %    vals2((num-50)/100+8)=sum(sum(sum(((ST*(7700/vol))<1-STr<1))));
 %end

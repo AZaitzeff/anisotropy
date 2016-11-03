@@ -1,6 +1,6 @@
 i=3;
-k=4;
-u = tdphysicalK3d(t(i),0.001,reshape(u0(k,:,:,:),[sizeu sizeu sizeu]),coeff10,coeff20);
+k=1;
+u = tdphysicalK3d(t(i),0.001,reshape(u0(k,:,:,:),[sizeu sizeu sizeu]),coeff1m(end,:),coeff2r);
 
 data1=reshape(data(k,i,:,:,:),[sizeu,sizeu,sizeu]);
 p = patch(isosurface(data1,.5));
