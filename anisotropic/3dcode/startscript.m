@@ -1,4 +1,4 @@
-
+function [coeff1m,coeff2m,vals]=startscript(coeff10,nt)
 N1=4;
 N2=3;
 sizeu=64;
@@ -20,8 +20,8 @@ end
 %coeff10=coeff1r+[0,.5,1.5,0,.5,.5]; %reg
 coeff20=coeff2r;
 
-coeff10=[-3.5448,-1.3199, -1.2984, -0.1480,-2.2807,-0.5571];
-%coeff10=[-3.5448,0,0,0,0,0]; %3
+%coeff10=coeff1r+[0,.1,.1,-.1,.1,.1];
+%coeff10=[-3.5448,-0.9656,-1.9503,-0.0873, -1.9521, -0.8870];
 %coeff20=[-3.5448,0,0,0,0,0];
 
 %coeff10=coeff1r+[0,0,.1,0,.1,.1]; %4
@@ -29,10 +29,10 @@ coeff10=[-3.5448,-1.3199, -1.2984, -0.1480,-2.2807,-0.5571];
 
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
-[coeff1m,coeff2m,vals]=gradientdescK(data,t,900,.000001,u0,coeff10,coeff20);
+[coeff1m,coeff2m,vals]=gradientdescK(data,t,nt,.000001,u0,coeff10,coeff20);
 toc
 %u = tdphysicalK3d(t,0.001,u0,coeff1w,coeff2w);
-save('coeffs2.mat','coeff1m','coeff2m','vals')
+%save('coeffs2.mat','coeff1m','coeff2m','vals')
 %isosurface(reshape(data(1,1,:,:,:),[sizeu sizeu sizeu]),0.5); axis([1 64 1 64 1 64]); axis square
 
        

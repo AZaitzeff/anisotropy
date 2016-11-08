@@ -1,5 +1,5 @@
 %coeff1=[-3.5448,0,-1,-2,1,0];
-coeff1l=coeff1;
+coeff1l=coeff1m(end,:);
 %[coeff1l]= boundsSH(coeff2r);
 %coeff1l=coeff1;
 %coeff2=[.1,.5,.5,.5,.1,.1];
