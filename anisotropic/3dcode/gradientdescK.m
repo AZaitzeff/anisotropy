@@ -15,7 +15,7 @@ tou=.98;
 flag=1;
 for step=1:nt
     if flag==1;
-        parfor e=2:N
+        for e=2:N
             grad(e)=(intsymdif(data,t,u0,coeff1+A(e,:)*h,coeff2)-val)/h;
         end
         %for e=2:N
