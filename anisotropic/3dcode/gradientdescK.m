@@ -1,5 +1,5 @@
 function [coeff1m,coeff2m,vals] = gradientdescK(data,t,nt,dt,u0,coeff10,coeff20)
-h=.01;
+h=.1;
 N=numel(coeff10);
 grad=zeros(1,2*N);
 A = eye(N); 

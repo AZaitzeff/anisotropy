@@ -1,5 +1,5 @@
 i=3;
-k=1;
+k=4;
 u = tdphysicalK3d(t(i),0.001,reshape(u0(k,:,:,:),[sizeu sizeu sizeu]),coeff1m(end,:),coeff2r);
 
 data1=reshape(data(k,i,:,:,:),[sizeu,sizeu,sizeu]);

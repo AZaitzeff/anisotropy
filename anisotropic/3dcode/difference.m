@@ -1,8 +1,17 @@
-total=5;
+total=300;
 vals1=zeros(total,1);
 n=40;
 a=3.5;
 [x,y,z] = meshgrid(linspace(-a,a,n),linspace(-a,a,n),linspace(-a,a,n));
+coeff1r=[-3.5448,-1,-2,0,-2,-1];
+STr=zeros(size(x));
+for i=1:n
+    for j=1:n
+        for k=1:n
+            STr(i,j,k)=cosinetrans([x(i,j,k),y(i,j,k),z(i,j,k)],coeff1r);
+        end
+    end
+end
 
 for num=1:total
     ST=zeros(size(x));
