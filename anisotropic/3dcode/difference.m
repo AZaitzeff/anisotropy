@@ -1,4 +1,4 @@
-total=300;
+total=100;
 vals1=zeros(total,1);
 n=40;
 a=3.5;
