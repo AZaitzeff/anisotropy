@@ -8,7 +8,7 @@ sigma=.5;
 
 
 %val=sum(sum(sum((imgaussfilt3(data,sigma)-imgaussfilt3(u,sigma)).^2)));
-for n=1:N1*N2
+parfor n=1:N1*N2
     k=mod(n-1,N1)+1;
     i=floor((n-1)/N1)+1;
     total=sum(sum(data(k,1,:,:)));
