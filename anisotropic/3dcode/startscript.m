@@ -31,7 +31,7 @@ coeff20=coeff2r;
 
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
-[coeff1m,coeff2m,vals]=gradientdescK(data,t,nt,.000001,u0,coeff10,coeff20);
+[coeff1m,coeff2m,vals]=gradientdescK(data,t,nt,.000002,u0,coeff10,coeff20);
 toc
 %u = tdphysicalK3d(t,0.001,u0,coeff1w,coeff2w);
 %save('coeffs2.mat','coeff1m','coeff2m','vals')
