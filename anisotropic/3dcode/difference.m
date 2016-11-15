@@ -1,5 +1,5 @@
-total=100;
-vals1=zeros(total,1);
+total=floor(numiters/10);
+valsani=zeros(total,1);
 n=40;
 a=3.5;
 [x,y,z] = meshgrid(linspace(-a,a,n),linspace(-a,a,n),linspace(-a,a,n));
@@ -13,7 +13,7 @@ for i=1:n
     end
 end
 
-for num=1:total
+parfor num=1:total
     ST=zeros(size(x));
     for i=1:n
         for j=1:n
@@ -23,7 +23,7 @@ for num=1:total
         end
     end
     %vol=sum(sum(sum(ST<1)));
-    vals1(num)=sum(sum(sum(abs((ST<1)-(STr<1)))));
+    valsani(num)=sum(sum(sum(abs((ST<1)-(STr<1)))));
 end
 
 

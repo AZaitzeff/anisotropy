@@ -1,4 +1,4 @@
-function [coeff1m,coeff2m,vals]=startscript(coeff10,nt)
+function [coeff1m,coeff2m,vals]=startscript(coeff10,coeff20,nt)
 N1=6;
 N2=2;
 sizeu=64;
@@ -20,7 +20,7 @@ for k=1:N1
     end
 end
 %coeff10=coeff1r+[0,.5,1.5,0,.5,.5]; %reg
-coeff20=coeff2r;
+%coeff20=coeff2r;
 
 %coeff10=coeff1r+[0,.1,.1,-.1,.1,.1];
 %coeff10=[-3.5448,-0.9656,-1.9503,-0.0873, -1.9521, -0.8870];
