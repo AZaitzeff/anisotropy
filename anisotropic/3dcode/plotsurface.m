@@ -1,4 +1,5 @@
-N1=6;
+
+N1=8;
 N2=2;
 sizeu=64;
 u0=zeros(N1,64,64,64);
@@ -8,6 +9,8 @@ u0(3,:,:,:)= getellipsoid(64,30,10,10,0,0,0);
 u0(4,:,:,:)= getellipsoid(64,10,30,10,0,0,0);
 u0(5,:,:,:)= getellipsoid(64,10,10,30,0,0,0);
 u0(6,:,:,:)= getellipsoid(64,30,10,10,3*pi/4,3*pi/4,pi/4);
+u0(7,:,:,:)= getellipsoid(64,30,30,10,pi/4,0,0);
+u0(8,:,:,:)= getellipsoid(64,10,30,30,0,0,0);
 coeff1r=[-3.5448,-1,-2,0,-2,-1];
 coeff2r=[-3.5448,0,-1,-1,-1,0];
 t=[10,20];
@@ -18,7 +21,7 @@ for k=1:N1
         data(k,i,:,:,:) = tdphysicalK3d(t(i),0.001,reshape(u0(k,:,:,:),[sizeu sizeu sizeu]),coeff1r,coeff2r);
     end
 end
-parpool
+parpool('local',4)
 
 n=31;
 w1=linspace(-1,1,n);
@@ -59,6 +62,6 @@ for i =1:n;
     end
 end
 delete(gcp('nocreate'))
-save('surface2.mat','Z1','Z2','Z3','Z4','Z5')
+save('surface3.mat','Z1','Z2','Z3','Z4','Z5')
 
 %surf(w1,w2,Z)
