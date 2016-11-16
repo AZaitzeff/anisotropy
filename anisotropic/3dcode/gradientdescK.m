@@ -18,9 +18,9 @@ for step=1:nt
         for e=2:N
             grad(e)=(intsymdif(data,t,u0,coeff1+A(e,:)*h,coeff2)-val)/h;
         end
-        %for e=2:N
-        %    grad(e+N)=(intsymdif(data,t,u0,coeff1,coeff2+A(e,:)*h)-val)/h;
-        %end
+        for e=2:N
+            grad(e+N)=(intsymdif(data,t,u0,coeff1,coeff2+A(e,:)*h)-val)/h;
+        end
     end
     %grad
     coeff1(1:N)=coeff1(1:N)-grad(1:N)*alpha;
