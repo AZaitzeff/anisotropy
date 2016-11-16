@@ -1,4 +1,4 @@
-function [coeff1m,coeff2m,vals]=startscript(coeff10,coeff20,nt)
+function [coeff1m,coeff2m,vals,step]=startscript(coeff10,coeff20,nt,dt)
 N1=6;
 N2=2;
 sizeu=64;
@@ -31,7 +31,7 @@ end
 
 %start = tdphysicalK3d(t,0.001,u0,coeff10,coeff20);
 tic
-[coeff1m,coeff2m,vals]=gradientdescK(data,t,nt,.000002,u0,coeff10,coeff20);
+[coeff1m,coeff2m,vals,step]=gradientdescK(data,t,nt,dt,u0,coeff10,coeff20);
 toc
 %u = tdphysicalK3d(t,0.001,u0,coeff1w,coeff2w);
 %save('coeffs2.mat','coeff1m','coeff2m','vals')

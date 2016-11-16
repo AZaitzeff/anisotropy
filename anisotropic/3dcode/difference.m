@@ -1,4 +1,4 @@
-total=floor(numiters/10);
+total=floor(step/10);
 valsani=zeros(total,1);
 n=40;
 a=3.5;
