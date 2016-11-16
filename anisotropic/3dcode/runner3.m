@@ -1,4 +1,4 @@
-parpool('local',4)
+parpool
 numiters=2000;
 coeff10=[-3.5448,-1,-1.5,0,-2,-.5];
 coeff20=[-3.5448,0,-1,-1.5,-1,0];
