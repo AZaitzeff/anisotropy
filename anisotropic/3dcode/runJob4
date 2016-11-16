@@ -1,3 +1,0 @@
-#!/bin/csh
-
-nohup matlab -nodisplay < runner4.m > output4.txt &
