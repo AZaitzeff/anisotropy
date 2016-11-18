@@ -1,7 +1,6 @@
 n=40;
 a=3.5;
 [x,y,z] = meshgrid(linspace(-a,a,n),linspace(-a,a,n),linspace(-a,a,n));
-
 STr=zeros(size(x));
 for i=1:n
     for j=1:n
