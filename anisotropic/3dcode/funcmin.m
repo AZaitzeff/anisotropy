@@ -20,13 +20,13 @@ for k=1:N1
         data(k,i,:,:,:) = tdphysicalK3d(t(i),0.001,reshape(u0(k,:,:,:),[sizeu sizeu sizeu]),coeff1r,coeff2r);
     end
 end
-fun=@(x)convert(data,t,u0,x);
-options = optimoptions('fminunc','Algorithm','quasi-newton','MaxIter',5);
-coeff10=[-3.5448,-.9,-1.9,0,-2.1,-1.1];
-coeff20=[-3.5448,0,-1,-1,-1,0];
-x0=zeros(1,10);
+fun=@(x)convertsimple(data,t,u0,x);
+options = optimoptions('fminunc','Algorithm','quasi-newton','MaxIter',25);
+coeff10=[-3.5448,-0.7581,-1.5994,0.0644,-2.6438,-0.6712];
+coeff20=[-3.5448,0,-.5,-.5,-1,0];
+x0=zeros(1,5);
 x0(1:5)=coeff10(2:6);
-x0(6:10)=coeff20(2:6);
+%x0(6:10)=coeff20(2:6);
 tic
 [optx,fval,exitflag,output,grad,hessian] = fminunc(fun,x0,options);
 toc

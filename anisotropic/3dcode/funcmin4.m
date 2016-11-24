@@ -1,4 +1,4 @@
-parpool('local',4)
+parpool('local',2)
 
 N1=6;
 N2=2;
@@ -22,13 +22,13 @@ for k=1:N1
 end
 fun=@(x)convert(data,t,u0,x);
 options = optimoptions('fminunc','Algorithm','quasi-newton','MaxIter',1000);
-coeff10=[-3.5448,-1,-1.9,0,-1.5,-.8];
-coeff20=[-3.5448,0,-.8,-1,-1.2,0];
+coeff10=[-3.5448,-.5,-1.5,-.5,-1.5,-.9];
+coeff20=[-3.5448,0,-1,-1,-1,0];
 x0=zeros(1,10);
 x0(1:5)=coeff10(2:6);
 x0(6:10)=coeff20(2:6);
 tic
-[optx,fval,exitflag,output,grad,hessian] = fminunc(fun,x0,options);
+[optx,fval,exitflag,output] = fminunc(fun,x0,options);
 toc
 delete(gcp('nocreate'))
-save('data8.mat','optx','fval','exitflag','output','grad','hessian')
+save('data10.mat','optx','fval','exitflag','output','coeff10','coeff20')

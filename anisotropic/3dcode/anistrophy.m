@@ -36,8 +36,8 @@ for i=1:n
         end
     end
 end
-sum(sum(sum(abs((ST0<1)-(STr<1)))));
-sum(sum(sum(abs((ST<1)-(STr<1)))));
+%sum(sum(sum(abs((ST0<1)-(STr<1)))))
+%sum(sum(sum(abs((ST<1)-(STr<1)))))
 % 63128
 % 63122  
 % 63122 
