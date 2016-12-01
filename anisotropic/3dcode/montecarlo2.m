@@ -1,4 +1,4 @@
-parpool('local',8)
+parpool('local',2)
 initializefunc
 
 for num=1:50
