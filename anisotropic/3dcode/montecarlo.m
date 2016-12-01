@@ -46,13 +46,13 @@ initializefunc
     end
     toc
     delete(gcp('nocreate'))
-%    filename=strcat('trialMCone',int2str(num),'.mat');
-%    coeff1=[-3.5448,0,0,0,0,0];
-%    coeff1(2:6)=bestx(1:5);
-%    coeff2=[-3.5448,0,0,0,0,0];
-%    coeff2(2:6)=bestx(6:10);
-%    anistrophy
-%    difani0=sum(sum(sum(abs((ST0<1)-(STr<1)))));
-%    difanif=sum(sum(sum(abs((ST<1)-(STr<1)))));
-%    save(filename,'culval','bestval','x','coeff10','coeff20','coeff1r','coeff2r','coeff1','coeff2','difani0','difanif')
+    filename=strcat('trialMCone',int2str(num),'.mat');
+    coeff1=[-3.5448,0,0,0,0,0];
+    coeff1(2:6)=bestx(1:5);
+    coeff2=[-3.5448,0,0,0,0,0];
+    coeff2(2:6)=bestx(6:10);
+    anistrophy
+    difani0=sum(sum(sum(abs((ST0<1)-(STr<1)))));
+    difanif=sum(sum(sum(abs((ST<1)-(STr<1)))));
+    save(filename,'culval','bestval','x','coeff10','coeff20','coeff1r','coeff2r','coeff1','coeff2','difani0','difanif')
 %end
