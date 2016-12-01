@@ -1,7 +1,7 @@
 parpool('local',8)
 for num=1:500
     initializefunc
-    options = optimoptions('fminunc','Algorithm','quasi-newton','MaxIter',2000);
+    options = optimoptions('fminunc','Algorithm','quasi-newton','HessUpdate','steepdesc','MaxIter',2000);
     value=0;
     coeff10=[-3.5448,-1,-2,0,-2,-.5];
     while(value<.2)
@@ -17,7 +17,7 @@ for num=1:500
     [optx,fval,exitflag,output] = fminunc(energy,x0,options);
     toc
     
-    filename=strcat('trialone',int2str(num),'.mat');
+    filename=strcat('trialonetwo',int2str(num),'.mat');
     changeback
     anistrophy
     difani0=sum(sum(sum(abs((ST0<1)-(STr<1)))));
