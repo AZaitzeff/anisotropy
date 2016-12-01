@@ -14,7 +14,7 @@ initializefunc
     x0(1:5)=coeff10(2:6);
     x0(6:10)=coeff20(2:6);
     tic
-    maxiter=100;
+    maxiter=10000;
     delta=.1;
     T=10;
     x=x0;
@@ -27,6 +27,7 @@ initializefunc
         pos=floor(rand()*2);
         change=zeros(1,10);
         change(ind)=delta-2*delta*pos;
+        newx=x+change
         newval=energy(x+change);
         if newval<curval
             x=x+change;
