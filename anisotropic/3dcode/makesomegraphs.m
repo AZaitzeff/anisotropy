@@ -20,6 +20,12 @@ xlabel('difference in anisotropy (initial)')
 ylabel('difference in anisotropy (final)')
 hold on
 plot(linspace(1,max(intanidif)),linspace(1,max(intanidif)))
+
+plot(intanidif,finanidif,'*')
+xlabel('difference in anisotropy (initial)')
+ylabel('difference in anisotropy (final)')
+hold on
+plot(linspace(1,max(intanidif)),linspace(1,max(intanidif)))
 maskb=fvalsb<20;
 
 plot(fvalsb(maskb),finanidifb(maskb),'*')

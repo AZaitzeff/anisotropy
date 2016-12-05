@@ -1,5 +1,5 @@
 parpool('local',8)
-for num=1:500
+for num=1:100
     N1=6;
     N2=2;
     sizeu=64;
@@ -21,7 +21,7 @@ for num=1:500
         end
     end
     fun=@(x)convert(data,t,u0,x);
-    options = optimoptions('fminunc','Algorithm','quasi-newton','HessUpdate','steepdesc','MaxIter',2000);
+    options = optimoptions('fminunc','Algorithm','quasi-newton','HessUpdate','steepdesc','MaxIter',2000,'MaxFunctionEvaluations',10000);
     value1=0;
     coeff10=[-3.5448,-1,-2,0,-2,-.5];
     while(value1<.2)

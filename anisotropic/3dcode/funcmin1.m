@@ -1,7 +1,7 @@
 parpool('local',8)
-for num=1:500
+for num=1:100
     initializefunc
-    options = optimoptions('fminunc','Algorithm','quasi-newton','HessUpdate','steepdesc','MaxIter',2000);
+    options = optimoptions('fminunc','Algorithm','quasi-newton','HessUpdate','steepdesc','MaxIter',2000,'MaxFunctionEvaluations',10000);
     value=0;
     coeff10=[-3.5448,-1,-2,0,-2,-.5];
     while(value<.2)
