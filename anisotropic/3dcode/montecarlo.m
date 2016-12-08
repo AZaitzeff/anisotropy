@@ -22,7 +22,8 @@ for num=1:50
     bestx=zeros(1,10);
     curval=energy(x);
     best=curval;
-    for step=1:maxiter
+    step=1;
+    while (step<maxiter && best>4)
         ind=ceil(rand()*10);
         pos=floor(rand()*2);
         change=zeros(1,10);
