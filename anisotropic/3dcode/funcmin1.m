@@ -26,7 +26,7 @@ for num=1:100
     
     bestx=x0;
     curx=x0;
-    best=energy(x);
+    best=energy(curx);
     step=1;
     tic
     while (step<maxiter && best>4)
