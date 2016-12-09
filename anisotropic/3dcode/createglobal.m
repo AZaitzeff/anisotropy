@@ -7,9 +7,9 @@ coeff20=[-3.5448,0,0,0,0,0];
 coeff10(2:6)=xstart(1:5);
 coeff20(2:6)=xstart(6:10);
 problem = createOptimProblem('fmincon','x0',xstart,'objective',energy,'nonlcon',constraintsSH);
-gs = GlobalSearch('StartPointsToRun','bounds-ineqs');
+gs = GlobalSearch('Display','iter');
 [optx,fmin,exitflag,output,manymins] = run(gs,problem);
-filename=strcat('trialglobal.mat');
+filename=strcat('trialglobal2.mat');
 changeback
 anistrophy
 difani0=sum(sum(sum(abs((ST0<1)-(STr<1)))));
