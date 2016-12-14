@@ -8,8 +8,19 @@ u0(3,:,:,:)= getellipsoid(64,30,10,10,0,0,0);
 u0(4,:,:,:)= getellipsoid(64,10,30,10,0,0,0);
 u0(5,:,:,:)= getellipsoid(64,10,10,30,0,0,0);
 u0(6,:,:,:)= getellipsoid(64,30,10,10,3*pi/4,3*pi/4,pi/4);
-coeff1r=[-3.5448,-1,-2,0,-2,-.5];
-coeff2r=[-3.5448,.1,-.1,-.1,-.1,.1];
+coeff1r=[-3.5448,0,0,0,0,0];
+while(value<.25)
+    per=randn(1,5);
+    coeff1r(2:6)=per/norm(per)*(rand()*10);
+    value=minval(coeff1r);
+end
+value2=0;
+coeff2r=[-3.5448,0,0,0,0,0];
+while(value2<.5)
+    per=randn(1,5);
+    coeff2r(2:6)=per/norm(per)*(rand()*1);
+    value2=minval(coeff20);
+end
 t=[10,20];
 
 data=zeros(N1,N2,64,64,64);

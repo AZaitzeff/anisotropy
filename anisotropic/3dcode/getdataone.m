@@ -1,20 +1,29 @@
-N=110;
+N1=26;
+N2=20;
+N=N1+N2;
 fvals=zeros(N,1);
-intnormdif=zeros(N,1);
-finnormdif=zeros(N,1);
+intnormdif1=zeros(N,1);
+finnormdif1=zeros(N,1);
+intnormdif2=zeros(N,1);
+finnormdif2=zeros(N,1);
 intanidif=zeros(N,1);
 finanidif=zeros(N,1);
-coeff10s=zeros(N,6);
+val=zeros(N,1);
 for num =1:N
-    filename=strcat('trialonetwo',int2str(num),'.mat');
+    if num<=N1
+        filename=strcat('trialglobalclose',int2str(num),'.mat');
+    else
+        filename=strcat('trialglobalfar',int2str(num-N1),'.mat');
+    end
     load(filename)
-    fvals(num)=fval;
-    intnormdif(num)=norm(coeff10-coeff1r);
-    finnormdif(num)=norm(coeff1-coeff1r);
-    coeff10s(num,:)=coeff10-coeff1r;
+    fvals(num)=fmin;
+    intnormdif1(num)=norm(coeff10-coeff1r);
+    finnormdif1(num)=norm(coeff1-coeff1r);
+    intnormdif2(num)=norm(coeff20-coeff2r);
+    finnormdif2(num)=norm(coeff2-coeff2r);
     intanidif(num)=difani0;
     finanidif(num)=difanif;
     val(num)=minval(coeff1);
-    clear difani0 difanif coeff10 coeff1r coeff1 fval;
+    clear difani0 difanif coeff10 coeff1r coeff1 coeff20 coeff2r coeff2 fval;
 end
     
