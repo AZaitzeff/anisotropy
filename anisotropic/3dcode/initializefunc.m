@@ -8,6 +8,7 @@ u0(3,:,:,:)= getellipsoid(64,30,10,10,0,0,0);
 u0(4,:,:,:)= getellipsoid(64,10,30,10,0,0,0);
 u0(5,:,:,:)= getellipsoid(64,10,10,30,0,0,0);
 u0(6,:,:,:)= getellipsoid(64,30,10,10,3*pi/4,3*pi/4,pi/4);
+value=0;
 coeff1r=[-3.5448,0,0,0,0,0];
 while(value<.25)
     per=randn(1,5);
