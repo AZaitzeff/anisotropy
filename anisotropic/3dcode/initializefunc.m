@@ -20,7 +20,7 @@ coeff2r=[-3.5448,0,0,0,0,0];
 while(value2<.5)
     per=randn(1,5);
     coeff2r(2:6)=per/norm(per)*(rand()*1);
-    value2=minval(coeff20);
+    value2=minval(coeff2r);
 end
 t=[10,20];
 
