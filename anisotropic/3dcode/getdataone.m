@@ -1,5 +1,5 @@
-N1=26;
-N2=20;
+N1=2;
+N2=4;
 N=N1+N2;
 fvals=zeros(N,1);
 intnormdif1=zeros(N,1);
@@ -11,9 +11,9 @@ finanidif=zeros(N,1);
 val=zeros(N,1);
 for num =1:N
     if num<=N1
-        filename=strcat('trialglobalclose',int2str(num),'.mat');
+        filename=strcat('trialglobalall',int2str(num),'.mat');
     else
-        filename=strcat('trialglobalfar',int2str(num-N1),'.mat');
+        filename=strcat('trialglobalallsec',int2str(num-N1),'.mat');
     end
     load(filename)
     fvals(num)=fmin;
