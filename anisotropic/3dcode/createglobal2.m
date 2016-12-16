@@ -21,7 +21,8 @@ for num=1:100
     xstart(1:5)=coeff10(2:6);
     xstart(6:10)=coeff20(2:6);
     M=10;
-    bounds=M*ones(1,10);
+    bounds=ones(1,10);
+    bounds(1:5)=M;
     problem = createOptimProblem('fmincon','x0',xstart,'objective',energy,'lb',-bounds,'ub',bounds,'nonlcon',@(x)constraintsSH(x));
     gs = GlobalSearch('NumTrialPoints',2500,'NumStageOnePoints',500);
     tic

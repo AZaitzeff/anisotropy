@@ -1,4 +1,4 @@
-N1=2;
+N1=3;
 N2=4;
 N=N1+N2;
 fvals=zeros(N,1);
