@@ -12,14 +12,14 @@ value=0;
 coeff1r=[-3.5448,0,0,0,0,0];
 while(value<.25)
     per=randn(1,5);
-    coeff1r(2:6)=per/norm(per)*(rand()*10);
+    coeff1r(2:6)=per/norm(per)*(rand()*5);
     value=minval(coeff1r);
 end
 value2=0;
 coeff2r=[-3.5448,0,0,0,0,0];
 while(value2<.5)
     per=randn(1,5);
-    coeff2r(2:6)=per/norm(per)*(rand()*1);
+    coeff2r(2:6)=per/norm(per)*(rand()*.5);
     value2=minval(coeff2r);
 end
 t=[10,20];
