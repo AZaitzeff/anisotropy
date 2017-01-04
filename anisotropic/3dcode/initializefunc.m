@@ -1,4 +1,4 @@
-N1=6;
+%N1=6;
 N2=2;
 sizeu=64;
 u0=zeros(N1,64,64,64);
@@ -10,9 +10,9 @@ u0(5,:,:,:)= getellipsoid(64,10,10,30,0,0,0);
 u0(6,:,:,:)= getellipsoid(64,30,10,10,3*pi/4,3*pi/4,pi/4);
 value=0;
 coeff1r=[-3.5448,0,0,0,0,0];
-while(value<.25)
+while(value<.2)
     per=randn(1,5);
-    coeff1r(2:6)=per/norm(per)*(rand()*5);
+    coeff1r(2:6)=per/norm(per)*(1+rand()*4);
     value=minval(coeff1r);
 end
 value2=0;
@@ -22,6 +22,7 @@ while(value2<.5)
     coeff2r(2:6)=per/norm(per)*(rand()*.5);
     value2=minval(coeff2r);
 end
+norm(coeff1r)
 t=[10,20];
 
 data=zeros(N1,N2,64,64,64);

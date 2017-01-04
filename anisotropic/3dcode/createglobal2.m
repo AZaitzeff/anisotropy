@@ -1,17 +1,18 @@
 parpool('local',12)
 
 
-for num=1:100
+for num=1:5
+    N1=4;
     initializefunc
     %value=0;
-    coeff10=[-3.5448,0,0,0,0,0];
+    coeff10=[-3.5448,-.1,-.1,-.1,-.1,-.1];
     %while(value<.2)
     %    per=randn(1,5);
     %    coeff10(2:6)=[-1,-2,0,-2,-.5]+per/norm(per)*(rand()*2+.5);
     %    value=minval(coeff10);
     %end
     %value2=0;
-    coeff20=[-3.5448,0,0,0,0,0];
+    coeff20=[-3.5448,-.1,-.1,-.1,-.1,-.1];
     %while(value2<.3)
     %    per=randn(1,5);
     %    coeff20(2:6)=[.1,-.1,-.1,-.1,.1]+per/norm(per)*(rand()*.25);
@@ -23,12 +24,13 @@ for num=1:100
     M=5;
     bounds=ones(1,10)*.5;
     bounds(1:5)=M;
-    problem = createOptimProblem('fmincon','x0',xstart,'objective',energy,'lb',-bounds,'ub',bounds,'nonlcon',@(x)constraintsSH(x));
+    %'lb',-bounds,'ub',bounds
+    problem = createOptimProblem('fmincon','x0',xstart,'objective',energy,'nonlcon',@(x)constraintsSH(x));
     gs = GlobalSearch('NumTrialPoints',5000,'NumStageOnePoints',400);
     tic
     [optx,fmin,exitflag,output,manymins] = run(gs,problem);
     toc
-    filename=strcat('trialglobalall',int2str(num),'.mat');
+    filename=strcat('trialglobalall4points',int2str(num),'.mat');
     changeback
     anistrophy
     difani0=sum(sum(sum(abs((ST0<1)-(STr<1)))));

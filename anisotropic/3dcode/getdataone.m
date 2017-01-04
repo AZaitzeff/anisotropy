@@ -1,5 +1,5 @@
-N1=3;
-N2=4;
+N1=11;
+N2=6;
 N=N1+N2;
 fvals=zeros(N,1);
 intnormdif1=zeros(N,1);
